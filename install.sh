@@ -1,7 +1,8 @@
 #!/bin/bash
 
 sudo pacman -Sy --needed stow cmake neovide lazygit luarocks difftastic fd just ripgrep \
-                hurl bottom starship eza gnome-terminal pass gnupg shellcheck
+                hurl bottom starship eza gnome-terminal pass gnupg shellcheck openvpn
+
 
 # install lazyvim
 if [ ! -e ~/.config/nvim/lua/config/lazy.lua ]; then
@@ -38,6 +39,11 @@ fi
 # install docker-desktop
 if ! command -v docker; then
   yay -S docker-desktop
+fi
+
+# install openvpn3
+if ! command -v openvpn3; then
+  yay -S openvpn3
 fi
 
 # install nerd fonts
