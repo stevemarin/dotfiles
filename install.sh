@@ -8,11 +8,10 @@ if [ ! -e ~/.config/nvim/lua/config/lazy.lua ]; then
   git clone https://github.com/LazyVim/starter ~/.config/nvim
 fi
 
-# install rust
+# install rust and binstall
 if ! command -v cargo; then
   sudo curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   cargo install cargo-binstall
-  cargo binstall --no-confirm jql
 fi
 
 # install bash-preexec for atuin
@@ -23,6 +22,11 @@ fi
 # install atuin
 if ! command -v atuin; then
   bash <(curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh)
+fi
+
+# isntall jql
+if ! command -v jql; then
+    cargo binstall jql
 fi
 
 # install vscodium-insiders
