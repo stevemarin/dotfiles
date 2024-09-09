@@ -1,8 +1,7 @@
 #!/bin/bash
 
 sudo pacman -Sy --needed stow cmake neovide lazygit luarocks difftastic fd just ripgrep \
-                hurl bottom starship eza gnome-terminal pass gnupg shellcheck openvpn
-
+  hurl bottom starship eza gnome-terminal pass gnupg shellcheck openvpn
 
 # install lazyvim
 if [ ! -e ~/.config/nvim/lua/config/lazy.lua ]; then
@@ -52,27 +51,27 @@ sudo mkdir --parents ${FONT_DIR}
 DIR="$(mktemp -d)"
 pushd "${DIR}" || exit 1
 
-if ! compgen "FiraCodeNerdFont*.ttf" > /dev/null; then
+if ! compgen "FiraCodeNerdFont*.ttf" >/dev/null; then
   wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip
 fi
 
-if ! compgen "HackNerdFont*.tft" > /dev/null; then
+if ! compgen "HackNerdFont*.tft" >/dev/null; then
   wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Hack.zip
 fi
 
-if ! compgen "InconsolataNerdFont*.ttf" > /dev/null; then
+if ! compgen "InconsolataNerdFont*.ttf" >/dev/null; then
   wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Inconsolata.zip
 fi
 
-if ! compgen "JetBrainsMonoNerdFont*.ttf" > /dev/null; then
+if ! compgen "JetBrainsMonoNerdFont*.ttf" >/dev/null; then
   wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
 fi
 
-if ! compgen "UbuntuNerdFont*.ttf" > /dev/null; then
+if ! compgen "UbuntuNerdFont*.ttf" >/dev/null; then
   wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Ubuntu.zip
 fi
 
-if ! compgen "*.zip" > /dev/null; then
+if ! compgen "*.zip" >/dev/null; then
   find . -name "*.zip" -exec unzip -n {} \;
   find . -name "*.zip" -exec rm {} \;
   sudo mv ./*.ttf* ${FONT_DIR}
