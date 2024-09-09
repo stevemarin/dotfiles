@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo pacman -Sy --needed stow cmake neovide lazygit luarocks difftastic fd just ripgrep \
-  hurl bottom starship eza gnome-terminal pass gnupg shellcheck openvpn
+  hurl bottom starship eza gnome-terminal pass gnupg shellcheck openvpn github-cli
 
 # install lazyvim
 if [ ! -e ~/.config/nvim/lua/config/lazy.lua ]; then
